@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #18181b; /* zinc-900 */
+  --color-accent-tech: #10b981; /* emerald-500 */
+  --color-accent-skincare: #14b8a6; /* teal-500 */
+  --color-accent-fashion: #000000;
+  
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Editorial Specific Utils */
+.editorial-title {
+  @apply font-black tracking-tighter leading-[0.85] uppercase;
+}
+
+.tracking-widest-plus {
+  letter-spacing: 0.25em;
+}
+
+.glass-zinc {
+  @apply bg-white/80 backdrop-blur-md border border-zinc-200/50;
+}
+
+.glow-emerald {
+  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.2);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
